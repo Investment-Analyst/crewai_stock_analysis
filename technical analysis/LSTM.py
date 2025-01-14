@@ -269,13 +269,10 @@ def evaluate_performance(data, initial_capital=500):
     """
     # 計算回報率
     data['Daily_Return'] = data['Portfolio_Value'].pct_change()
-    data['Cumulative_Return'] = (1 + data['Daily_Return']).cumprod()
 
     # 計算各種績效指標
     total_return = ((data['Portfolio_Value'].iloc[-1] - initial_capital) /
                     initial_capital) * 100
-    annualized_return = (data['Cumulative_Return'].iloc[-1] **
-                         (365 / len(data)) - 1) * 100
 
     returns = data['Daily_Return'].dropna()
     sharpe_ratio = (returns.mean() / returns.std()) * np.sqrt(252)
@@ -293,7 +290,6 @@ def evaluate_performance(data, initial_capital=500):
     # 打印結果
     print("\n==== 策略績效評估 ====")
     print(f"總回報率: {total_return:.2f}%")
-    print(f"年化回報率: {annualized_return:.2f}%")
     print(f"夏普比率: {sharpe_ratio:.2f}")
     print(f"最大回撤: {max_drawdown:.2f}%")
     print(f"勝率: {win_rate:.2%}")
@@ -352,10 +348,10 @@ def main():
         print("開始執行交易策略...")
 
         # 定義交易股票代號
-        ticker = 'NVDA'
+        ticker = 'BTC-USD'
 
         # 下載數據
-        data = download_data(ticker=ticker, years=5)
+        data = download_data(ticker=ticker, years=7)
         print("數據下載完成，開始計算技術指標...")
 
         # 計算技術指標
