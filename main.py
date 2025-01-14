@@ -44,16 +44,16 @@ class FinancialCrew:
     return result
 
 if __name__ == "__main__":
-  print("## 欢迎加入财务分析团队")
+  print("## 歡迎使用股票分析機器人")
   print('-------------------------------')
   company = input(
     dedent("""
-      你想分析的公司是什么？
+      你想分析的股票是什麼？
     """))
-  
+
   financial_crew = FinancialCrew(company)
   result = financial_crew.run()
   print("\n\n########################")
-  print("## 这是报告")
+  print("## 這是報告")
   print("########################\n")
   print(result)
