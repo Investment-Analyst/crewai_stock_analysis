@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # --------------------------
 symbol = "CNY=X"  # 在 Yahoo Finance 代表離岸人民幣
 start_date = "2020-01-01"
-end_date = "2024-12-28"
+end_date = "2025-12-28"
 
 df = yf.download(symbol, start=start_date, end=end_date)
 df.dropna(inplace=True)

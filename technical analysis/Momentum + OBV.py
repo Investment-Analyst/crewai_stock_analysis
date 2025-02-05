@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 #------------------------------------------
 # 1. 從 Yahoo Finance 下載 CNY=X 日線資料
 #------------------------------------------
-symbol = "TSLA"
+symbol = "USDCNY=X"
 start_date = "2021-01-01"
-end_date = "2024-01-01"
+end_date = "2025-01-01"
 
 data = yf.download(symbol, start=start_date, end=end_date, interval="1d")
 
