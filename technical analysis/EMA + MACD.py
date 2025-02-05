@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # --------------------------
 # 1. 下載/載入 USD/CNY (示例: 離岸人民幣 CNH=X)
 # --------------------------
-symbol = "DX-Y.NYB"  # DX-Y.NYB 在 Yahoo Finance 代表美元指數
+symbol = "DX-Y.NYB"  # DX-Y.NYB 在 Yahoo Finance 代表美元指數 USDTWD=X or TWD=X 代表美元/新台幣
 start_date = "2024-01-01"
 end_date = "2025-12-28"
 
@@ -18,7 +18,7 @@ df['Price'] = df['Close']  # 收盤價
 # 2. 計算技術指標 (MA, MACD, RSI, Bollinger Bands)
 # --------------------------
 short_window = 10
-long_window = 30
+long_window = 20
 
 # 移動平均
 df['MA_short'] = df['Price'].rolling(window=short_window).mean()
